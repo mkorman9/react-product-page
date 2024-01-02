@@ -1,5 +1,6 @@
 import {FaBlender} from 'react-icons/fa';
 import HamburgerMenu from './HamburgerMenu.tsx';
+import {Link} from 'react-router-dom';
 
 const TopBar = () => {
   return (
@@ -9,14 +10,14 @@ const TopBar = () => {
         <span className="ml-2 font-bold text-2xl">Blendify</span>
       </div>
 
-      <div className="flex gap-10 max-lg:hidden">
-        <span className="cursor-pointer">Home</span>
-        <span className="cursor-pointer">About Us</span>
-        <span className="cursor-pointer">Help</span>
-        <span className="cursor-pointer">Careers</span>
-      </div>
+      <nav className="flex gap-10 max-lg:hidden">
+        <Link to="/">Home</Link>
+        <Link to="/about">About Us</Link>
+        <Link to="/help">Help</Link>
+        <Link to="/careers">Careers</Link>
+      </nav>
       <div className="flex ml-auto lg:hidden">
-        <HamburgerMenu />
+        <HamburgerMenu/>
       </div>
     </div>
   );

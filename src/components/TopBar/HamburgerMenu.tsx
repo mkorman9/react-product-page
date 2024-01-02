@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {Transition} from '@headlessui/react';
+import {Link} from 'react-router-dom';
 
 const HamburgerMenu = () => {
   const [navigationExpanded, setNavigationExpanded] = useState(false);
@@ -21,14 +22,14 @@ const HamburgerMenu = () => {
         leaveFrom="scale-100"
         leaveTo="scale-0"
       >
-        <div className="absolute right-0 top-14 flex flex-col gap-6 w-screen p-4
+        <nav className="absolute right-0 top-14 flex flex-col gap-6 w-screen p-4
                         bg-white rounded-xl shadow-xl
                         text-black text-xl text-center">
-          <span className="cursor-pointer">Home</span>
-          <span className="cursor-pointer">About Us</span>
-          <span className="cursor-pointer">Help</span>
-          <span className="cursor-pointer">Careers</span>
-        </div>
+          <Link to="/" onClick={() => setNavigationExpanded(false)}>Home</Link>
+          <Link to="/about" onClick={() => setNavigationExpanded(false)}>About Us</Link>
+          <Link to="/help" onClick={() => setNavigationExpanded(false)}>Help</Link>
+          <Link to="/careers" onClick={() => setNavigationExpanded(false)}>Careers</Link>
+        </nav>
       </Transition>
     </>
   );

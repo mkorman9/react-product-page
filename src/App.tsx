@@ -1,13 +1,20 @@
 import TopBar from './components/TopBar/TopBar.tsx';
-import MainContent from './components/MainContent/MainContent.tsx';
-import Features from './components/Features/Features.tsx';
+import MainPage from './components/MainPage/MainPage.tsx';
+import {Route, Routes} from 'react-router-dom';
+import AboutPage from './components/AboutPage/AboutPage.tsx';
+import HelpPage from './components/HelpPage/HelpPage.tsx';
+import CareersPage from './components/CareersPage/CareersPage.tsx';
 
 const App = () => {
   return (
     <div className="flex flex-col">
       <TopBar />
-      <MainContent />
-      <Features />
+      <Routes>
+        <Route index element={<MainPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/help" element={<HelpPage />} />
+        <Route path="/careers" element={<CareersPage />} />
+      </Routes>
     </div>
   );
 };
